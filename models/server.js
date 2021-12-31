@@ -18,9 +18,7 @@ class Server {
     }
 
     routes() {
-        this.app.get("/api", (req, res) => {
-            res.send('Saludos desde express');
-        });
+        this.app.use('/api/usuarios', require('../routes/user'));
     }
 
     listen() {
