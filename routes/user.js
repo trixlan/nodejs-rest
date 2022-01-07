@@ -1,9 +1,12 @@
 const { Router } = require('express');
+const { usuariosGet, usuariosPost, usuariosPut } = require('../controllers/user');
 
 const router = Router();
 
-router.get("/", (req, res) => {
-    res.send('Saludos desde express');
-});
+router.get("/", usuariosGet);
+
+router.post("/", usuariosPost);
+
+router.put("/:id", usuariosPut);
 
 module.exports = router;
